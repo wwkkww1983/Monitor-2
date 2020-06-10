@@ -1,0 +1,126 @@
+﻿生成启动时间为 2020/6/8 16:45:42。
+     1>项目“D:\MyProjects\Monitor\Monitor\Monitor.vcxproj”在节点 2 上(build 个目标)。
+       项目文件包含 ToolsVersion="12.0" 设置，而此版本的 MSBuild 不支持该工具版本。该项目将视为包含 ToolsVersion="4.0" 设置。
+     1>InitializeBuildStatus:
+         正在创建“Debug\Monitor.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I./thread /ID:\MyProjects\Monitor\Monitor\ADO /ID:\MyProjects\Monitor\Monitor\ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\Monitor.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+     1>d:\myprojects\monitor\monitor\cxlog.h(213): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_snwprintf”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(274): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(283) : 参见“wcscpy”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(286): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(283) : 参见“wcscpy”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(337): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(283) : 参见“wcscpy”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(340): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(283) : 参见“wcscpy”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(364): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\time.inl(112) : 参见“localtime”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(365): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(276) : 参见“wcscat”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(461): warning C4996: '_vsnwprintf': This function or variable may be unsafe. Consider using _vsnwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_vsnwprintf”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(475): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_snwprintf”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(485): warning C4996: '_swprintf': This function or variable may be unsafe. Consider using _swprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(761) : 参见“_swprintf”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(503): warning C4996: '_swprintf': This function or variable may be unsafe. Consider using _swprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(761) : 参见“_swprintf”的声明
+     1>d:\myprojects\monitor\monitor\cxlog.h(619): warning C4309: “初始化”: 截断常量值
+     1>d:\myprojects\monitor\monitor\cxlog.h(619): warning C4309: “初始化”: 截断常量值
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I./thread /ID:\MyProjects\Monitor\Monitor\ADO /ID:\MyProjects\Monitor\Monitor\ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Monitor.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ADO\Ado.cpp ADO\AdoCommand.cpp ADO\AdoHelp.cpp ADO\AdoRecordSet.cpp DlgView.cpp ParamHelp.cpp ModbusHelp.cpp COM\ComModBus.cpp DlgDatabase.cpp Monitor.cpp DlgMain.cpp WorkFunc.cpp WorkPool.cpp WRPF.cpp
+         WRPF.cpp
+         WorkPool.cpp
+         WorkFunc.cpp
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(571): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_vsnprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(581): warning C4996: '_vsnwprintf': This function or variable may be unsafe. Consider using _vsnwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_vsnwprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(591): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“vsprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(601): warning C4996: 'vswprintf': swprintf has been changed to conform with the ISO C standard, adding an extra character count parameter. To use traditional Microsoft swprintf, set _CRT_NON_CONFORMING_SWPRINTFS.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\swprintf.inl(97) : 参见“vswprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(1478): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_snwprintf”的声明
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(61): error C2039: “GetInstance”: 不是“CHModbusHelp”的成员
+                 d:\myprojects\monitor\monitor\modbushelp.h(20) : 参见“CHModbusHelp”的声明
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(61): error C2227: “->m_bInit”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(61): error C3861: “GetInstance”: 找不到标识符
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(120): error C2039: “GetInstance”: 不是“CHModbusHelp”的成员
+                 d:\myprojects\monitor\monitor\modbushelp.h(20) : 参见“CHModbusHelp”的声明
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(120): error C2227: “->WriteData”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(120): error C3861: “GetInstance”: 找不到标识符
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(133): error C2039: “GetInstance”: 不是“CHModbusHelp”的成员
+                 d:\myprojects\monitor\monitor\modbushelp.h(20) : 参见“CHModbusHelp”的声明
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(133): error C2227: “->ReadData”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(133): error C3861: “GetInstance”: 找不到标识符
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(160): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+     1>d:\myprojects\monitor\monitor\workfunc.cpp(161): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+         DlgMain.cpp
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(571): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_vsnprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(581): warning C4996: '_vsnwprintf': This function or variable may be unsafe. Consider using _vsnwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_vsnwprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(591): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“vsprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(601): warning C4996: 'vswprintf': swprintf has been changed to conform with the ISO C standard, adding an extra character count parameter. To use traditional Microsoft swprintf, set _CRT_NON_CONFORMING_SWPRINTFS.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\swprintf.inl(97) : 参见“vswprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(1478): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_snwprintf”的声明
+     1>d:\myprojects\monitor\monitor\dlgmain.cpp(234): error C2039: “GetInstance”: 不是“CHModbusHelp”的成员
+                 d:\myprojects\monitor\monitor\modbushelp.h(20) : 参见“CHModbusHelp”的声明
+     1>d:\myprojects\monitor\monitor\dlgmain.cpp(234): error C2227: “->Init”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>d:\myprojects\monitor\monitor\dlgmain.cpp(234): error C3861: “GetInstance”: 找不到标识符
+     1>d:\myprojects\monitor\monitor\dlgmain.cpp(241): error C2039: “GetInstance”: 不是“CHModbusHelp”的成员
+                 d:\myprojects\monitor\monitor\modbushelp.h(20) : 参见“CHModbusHelp”的声明
+     1>d:\myprojects\monitor\monitor\dlgmain.cpp(241): error C2227: “->m_bInit”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>d:\myprojects\monitor\monitor\dlgmain.cpp(241): error C3861: “GetInstance”: 找不到标识符
+         Monitor.cpp
+         DlgDatabase.cpp
+         ComModBus.cpp
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(571): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_vsnprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(581): warning C4996: '_vsnwprintf': This function or variable may be unsafe. Consider using _vsnwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_vsnwprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(591): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“vsprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(601): warning C4996: 'vswprintf': swprintf has been changed to conform with the ISO C standard, adding an extra character count parameter. To use traditional Microsoft swprintf, set _CRT_NON_CONFORMING_SWPRINTFS.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\swprintf.inl(97) : 参见“vswprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(1478): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_snwprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\commodbus.cpp(161): warning C4101: “result”: 未引用的局部变量
+         ModbusHelp.cpp
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(571): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(363) : 参见“_vsnprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(581): warning C4996: '_vsnwprintf': This function or variable may be unsafe. Consider using _vsnwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_vsnwprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(591): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : 参见“vsprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(601): warning C4996: 'vswprintf': swprintf has been changed to conform with the ISO C standard, adding an extra character count parameter. To use traditional Microsoft swprintf, set _CRT_NON_CONFORMING_SWPRINTFS.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\swprintf.inl(97) : 参见“vswprintf”的声明
+     1>d:\myprojects\monitor\monitor\com\cncomm.h(1478): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\wchar.h(707) : 参见“_snwprintf”的声明
+         ParamHelp.cpp
+         DlgView.cpp
+     1>d:\myprojects\monitor\monitor\dlgview.cpp(159): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+     1>d:\myprojects\monitor\monitor\dlgview.cpp(160): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+         AdoRecordSet.cpp
+     1>d:\myprojects\monitor\monitor\ado\adorecordset.cpp(2379): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : 参见“strncpy”的声明
+         AdoHelp.cpp
+     1>d:\myprojects\monitor\monitor\ado\adohelp.cpp(49): warning C4101: “e”: 未引用的局部变量
+         AdoCommand.cpp
+         Ado.cpp
+         正在生成代码...
+     1>已完成生成项目“D:\MyProjects\Monitor\Monitor\Monitor.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:09.17
