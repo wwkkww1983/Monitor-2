@@ -41,6 +41,7 @@
 #include "CHStrUtils.h"
 #include "CxLog.h"
 #include "CxTip.h"
+#include <afxdlgs.h>
 
 
 

@@ -16,9 +16,9 @@ private:
 
 // var
 public:
-	// [SYSTEM]
+	// [othoer]
 
-	int	m_nUpdateDelteTime;
+	int				m_nTimeSpan;
 	// [Serial]
 	int				m_nPort;
 	int				m_nBaud;
@@ -33,11 +33,13 @@ public:
 	void Refresh();
 	void Save();
 
-	void ReadConnectRoot();							// 读取
-	void WriteConnectRoot();						// 写入
 
-	void ReadSerialRoot();							// 读取【Serial】
-	void WriteSerialRoot();							// 写入【Serial】
+	void ReadSerialRoot();							// 读取【Serial】参数
+	void WriteSerialRoot();							// 写入【Serial】参数
+	
+	//备用
+	void ReadOtherRoot();							// 读取【Other】参数
+	void WriteOtherRoot();							// 写入【Other】参数
 public:
 	static CParamHelp* GetInstance();
 	

@@ -110,12 +110,12 @@ void CDlgView::DrawAxis(CDC* pDC)
 	{
 		//画温度x轴刻度尺，长度5像素
 		DrawLine(pDC, i*nDelta, nAxisHeight - 5, i*nDelta, nAxisHeight);
-		strDelta.Format(_T("%d"), CHParam->m_nUpdateDelteTime*(10 - i));
+		strDelta.Format(_T("%d"), CHParam->m_nTimeSpan*(10 - i));
 		//温度X轴刻度值
 		pDC->TextOut(OffsetX + i*nDelta, OffsetY + nAxisHeight + 5, strDelta);
 		//画湿度x轴刻度尺，长度5像素
 		DrawLine(pDC, 500 + i*nDelta, nAxisHeight - 5, 500 + i*nDelta, nAxisHeight);
-		strDelta.Format(_T("%d"), CHParam->m_nUpdateDelteTime*(10 - i));
+		strDelta.Format(_T("%d"), CHParam->m_nTimeSpan*(10 - i));
 		//湿度X轴刻度值
 		pDC->TextOut(OffsetX + 500 + i*nDelta, OffsetY + nAxisHeight + 5, strDelta);
 

@@ -5,7 +5,7 @@
 #include "Monitor.h"
 #include "DlgDatabase.h"
 #include "afxdialogex.h"
-#include "AdoHelp.h"
+#include "SQLiteHelp.h"
 
 // CDlgDatabase 对话框
 
@@ -51,6 +51,7 @@ BOOL CDlgDatabase::OnInitDialog()
 	dwStyle |= LVS_EX_FULLROWSELECT;
 	m_ListCtrl.SetExtendedStyle(dwStyle);
 
+	UpdateList();
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 异常:  OCX 属性页应返回 FALSE
@@ -60,14 +61,14 @@ BOOL CDlgDatabase::OnInitDialog()
 void CDlgDatabase::OnBnClickedBtnClear()
 {
 	// TODO:  在此添加控件通知处理程序代码
-	CHAdo->ClearDatabase();
+	CHSQLite->ClearDatabase();
 }
 
 
 void CDlgDatabase::UpdateList()
 {
 	m_ListCtrl.DeleteAllItems();
-	CHAdo->LoadDataToList(m_ListCtrl);
+	CHSQLite->LoadDataToList(m_ListCtrl);
 }
 
 void CDlgDatabase::OnBnClickedBtnUpdate()
@@ -86,7 +87,7 @@ void CDlgDatabase::OnBnClickedBtnDelete()
 	if (nIndex >= 0)
 	{
 		CString strTime = m_ListCtrl.GetItemText(nIndex, 0);
-		CHAdo->DeleteRecord(strTime);
+		CHSQLite->DeleteRecord(strTime);
 		m_ListCtrl.DeleteItem(nIndex);
 	}
 }

@@ -20,39 +20,35 @@ CParamHelp* CParamHelp::GetInstance()
 }
 
 void CParamHelp::Refresh()
-{
-	ReadConnectRoot();
+{	
 	ReadSerialRoot();
+	ReadOtherRoot();
 }
 
 void CParamHelp::Save()
-{
-	WriteConnectRoot();
+{	
 	WriteSerialRoot();
+	WriteOtherRoot();
 }
 
 
 
 
-void CParamHelp::ReadConnectRoot()
+void CParamHelp::ReadOtherRoot()
 {
-	WRPF wrpf;
-	wrpf.Load(CHGetExeDirPath()+_T("Param.ini"));
-	wrpf.changeRoot(_T("System"));
-
-
-	wrpf.rd(_T("m_nUpdateDelteTime"), m_nUpdateDelteTime);
+	//WRPF wrpf;
+	//wrpf.Load(CHGetExeDirPath()+_T("Param.ini"));
+	//wrpf.changeRoot(_T("Other"));
+	
 }
 
 
-void CParamHelp::WriteConnectRoot()
+void CParamHelp::WriteOtherRoot()
 {
-	WRPF wrpf;
-	wrpf.Load(CHGetExeDirPath()+_T("Param.ini"));
-	wrpf.changeRoot(_T("System"));
-
-
-	wrpf.wt(_T("m_nUpdateDelteTime"), m_nUpdateDelteTime);
+	//WRPF wrpf;
+	//wrpf.Load(CHGetExeDirPath()+_T("Param.ini"));
+	//wrpf.changeRoot(_T("Other"));
+	
 }
 
 
@@ -68,6 +64,7 @@ void CParamHelp::ReadSerialRoot()
 	wrpf.rd(_T("m_nDataBits"), m_nDataBits);
 	wrpf.rd(_T("m_nStopBits"), m_nStopBits);
 
+	wrpf.rd(_T("m_nTimeSpan"), m_nTimeSpan);
 }
 
 
@@ -83,6 +80,7 @@ void CParamHelp::WriteSerialRoot()
 	wrpf.wt(_T("m_nDataBits"), m_nDataBits);
 	wrpf.wt(_T("m_nStopBits"), m_nStopBits);
 
+	wrpf.wt(_T("m_nTimeSpan"), m_nTimeSpan);
 }
 
 

@@ -4,7 +4,7 @@
 #include "ParamHelp.h"
 #include "WorkPool.h"
 #include "ModbusHelp.h"
-#include "AdoHelp.h"
+#include "SQLiteHelp.h"
 #include "DlgMain.h"
 
 //温度值和像素Y坐标值具备某种线性关系
@@ -13,12 +13,13 @@
 //湿度值和像素Y坐标值具备某种线性关系
 #define HTOY(x)   (3*x)
 
+
 // 控制参数
-unsigned int CWorkFunc::m_nWorkStep = 10;
+UINT		CWorkFunc::m_nWorkStep = 10;
 
 
-int		 CWorkFunc::m_nPixYTemperature[11] = { 0 };
-int		 CWorkFunc::m_nPixYHumidity[11] = { 0 };
+int			CWorkFunc::m_nPixYTemperature[11] = { 0 };
+int			CWorkFunc::m_nPixYHumidity[11] = { 0 };
 
 double		CWorkFunc::m_fCurTemperature = 0;
 double		CWorkFunc::m_fCurHumidity = 0;
@@ -99,7 +100,7 @@ BOOL CWorkFunc::WaitWork()
 
 		curTime = CTime::GetCurrentTime();
 		timeSpan = curTime - lastTime;
-		if (timeSpan.GetSeconds() >= CHParam->m_nUpdateDelteTime)
+		if (timeSpan.GetSeconds() >= CHParam->m_nTimeSpan)
 		{
 			break;
 		}	
@@ -150,7 +151,7 @@ BOOL CWorkFunc::ReadData()
 	CString strTime = CTime::GetCurrentTime().Format(_T("%y-%m-%d %H:%M:%S"));
 	strTemperature.Format(_T("%.1f"), m_fCurTemperature);
 	strHumidity.Format(_T("%.1f"), m_fCurHumidity);
-	CHAdo->InsertTable(strTime, strTemperature, strHumidity);
+	CHSQLite->InsertTable(strTime, strTemperature, strHumidity);
 	return TRUE;
 }
 

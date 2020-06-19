@@ -13,11 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ADO">
-      <UniqueIdentifier>{c2be0753-f4be-4042-8205-26f32558e210}</UniqueIdentifier>
-    </Filter>
     <Filter Include="COM">
       <UniqueIdentifier>{23e0f90a-7261-4dd6-8ed4-91b938fde5df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SQLite">
+      <UniqueIdentifier>{40623c00-b4d9-45f0-b8ad-e6596c949897}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -26,6 +26,15 @@
       <Filter>资源文件</Filter>
     </None>
     <None Include="res\Monitor.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\tree_icons.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icons_large.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icons_small.bmp">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
@@ -41,18 +50,6 @@
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ADO\Ado.h">
-      <Filter>ADO</Filter>
-    </ClInclude>
-    <ClInclude Include="ADO\AdoCommand.h">
-      <Filter>ADO</Filter>
-    </ClInclude>
-    <ClInclude Include="ADO\AdoHelp.h">
-      <Filter>ADO</Filter>
-    </ClInclude>
-    <ClInclude Include="ADO\AdoRecordSet.h">
-      <Filter>ADO</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
       <Filter>头文件</Filter>
@@ -99,6 +96,27 @@
     <ClInclude Include="DlgView.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="sqlite3\sqlite3.h">
+      <Filter>SQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="SQLiteHelp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite3\CppSQLite3U.h">
+      <Filter>SQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgParam.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PageParam1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PageParam2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SheetParam.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Monitor.cpp">
@@ -106,18 +124,6 @@
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ADO\Ado.cpp">
-      <Filter>ADO</Filter>
-    </ClCompile>
-    <ClCompile Include="ADO\AdoCommand.cpp">
-      <Filter>ADO</Filter>
-    </ClCompile>
-    <ClCompile Include="ADO\AdoHelp.cpp">
-      <Filter>ADO</Filter>
-    </ClCompile>
-    <ClCompile Include="ADO\AdoRecordSet.cpp">
-      <Filter>ADO</Filter>
     </ClCompile>
     <ClCompile Include="COM\ComModBus.cpp">
       <Filter>COM</Filter>
@@ -144,6 +150,24 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DlgView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SQLiteHelp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sqlite3\CppSQLite3U.cpp">
+      <Filter>SQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgParam.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PageParam1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PageParam2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SheetParam.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -16,7 +16,7 @@
 #define CHSearchFiles		CHStrUtils::SearchFiles
 #define CHUTF8ToCString		CHStrUtils::UTF8ToCString
 #define CHXWriteFile		CHStrUtils::XWriteFile
-
+#define CHGetIntFromString	CHStrUtils::GetIntFromString
 #ifndef Char2WChar
 #define Char2WChar(lpMultiByteStr,cbMultiByte,lpWideCharStr,cbWideChar) \
 	MultiByteToWideChar(CP_ACP/*代码页*/, 0, lpMultiByteStr/*ANSI字符串*/, cbMultiByte/*ANSI字符串大小*/, lpWideCharStr/*Unicode字符串缓冲区*/, cbWideChar/*Unicode字符串字符串缓冲区*/)
@@ -242,52 +242,7 @@ public:
 		return 0;
 	}
 
-	//// 字符串分割
-	//static CString HGLaserString(const CString& strString, const CString& strHGLaser, int& nStart)
-	//{
-	//	ASSERT(strHGLaser.GetLength() > 0);
 
-	//	if(nStart < 0 || nStart > strString.GetLength())
-	//	{
-	//		nStart = -1;
-	//		return _T("");
-	//	}
-
-	//	int nPos = strString.Find(strHGLaser, nStart);
-	//	if(nPos == -1) nPos = strString.GetLength();
-	//	ASSERT(nPos >= nStart);
-
-	//	CString strResult = strString.Mid(nStart, nPos - nStart);
-	//	nStart = nPos + strHGLaser.GetLength();
-	//	return strResult;
-	//}
-
-	//static void HGLaserString(const CString& strString, const CString& strHGLaser, CStringArray& arStr)
-	//{
-	//	int nStart = 0;
-	//	ASSERT(strHGLaser.GetLength() > 0);
-
-	//	arStr.RemoveAll();
-	//	while (TRUE)
-	//	{
-	//		if(nStart < 0 || nStart > strString.GetLength())
-	//		{
-	//			nStart = -1;
-	//			break;
-	//		}
-
-	//		int nPos = strString.Find(strHGLaser, nStart);
-	//		if(nPos == -1) nPos = strString.GetLength();
-	//		ASSERT(nPos >= nStart);
-
-	//		CString strResult = strString.Mid(nStart, nPos - nStart);
-	//		nStart = nPos + strHGLaser.GetLength();
-	//		arStr.Add(strResult);
-	//	}
-
-	//	return ;
-	//}
-	// 字符串分割
 	static CString SplitString(const CString& strString, const CString& strSplit, int& nStart)
 	{
 		ASSERT(strSplit.GetLength() > 0);
@@ -478,8 +433,18 @@ public:
 
 		return CString(sAsciiString);
 	}
+	//提取出字符串中包含的整数
+	static int GetIntFromString(_In_ const CString sText)
+	{
+		int nResult = 0;
+		for(int i=0;i<sText.GetLength();i++)
+		{
+			if(sText[i]>= '0'&&sText[i]<= '9')
+				nResult = nResult*10 + sText[i]-'0';
+		}		
 
-
+		return nResult;
+	}
 };
 
 #endif //_CH_STRIUTILS_H__

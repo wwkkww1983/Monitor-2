@@ -6,12 +6,15 @@
 #include "DlgDatabase.h"
 
 #include "DlgView.h"
+#include "DlgParam.h"
+
 #include "afxcmn.h"
 
 // define
-#define		WM_MSG_HGLASER_SWITCHWND	WM_USER + 100
+#define		WM_MSG_SWITCHWND	WM_USER + 100
 #define		WND_MONITOR					0				// main 对话框
-#define		WND_DATABASE				1				// motion 对话框
+#define		WND_DATABASE				1				// 数据记录对话框
+#define		WND_PARAM					2				// 参数对话框
 
 // CDlgMain 对话框
 class CDlgMain : public CDialogEx
@@ -44,7 +47,7 @@ protected:
 public:
 	CDlgDatabase		m_wndDatabase;
 	CDlgView			m_wndView;
-
+	CDlgParam			m_wndParam;
 public:
 	BOOL	CreateChildWnd();
 	LRESULT OnSwitchWnd(WPARAM wParam, LPARAM lParam);

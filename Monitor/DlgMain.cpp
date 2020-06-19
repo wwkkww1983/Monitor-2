@@ -7,7 +7,7 @@
 #include "DlgMain.h"
 #include "afxdialogex.h"
 #include "ModbusHelp.h"
-#include "AdoHelp.h"
+#include "SQLiteHelp.h"
 #include "ParamHelp.h"
 #include "WorkFunc.h"
 #include "WorkPool.h"
@@ -112,16 +112,15 @@ BOOL CDlgMain::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+	
 	InitLogList();
 
-	m_wndTab.InsertItem(0, _T("主界面"));
-	m_wndTab.InsertItem(1, _T("数据查看"));	
-	m_wndTab.SetItemSize(CSize(50, 35));
-	m_wndTab.SetImageList(&m_ImageList);
+	InitSys();
+
 	CreateChildWnd();
 	OnSwitchWnd(0, WND_MONITOR);
 
-	InitSys();
+	
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
@@ -221,12 +220,11 @@ BOOL	CDlgMain::InitSys()			// 初始化所有资源
 	LOG(_T("加载系统参数"));
 	CHParam->Refresh();
 
-	CString strMdb = CHGetExeDirPath() + _T("Database.mdb");
-	bRtn = CHAdo->ConnectAccess(strMdb);
+	CString strDbPath = CHGetExeDirPath() + _T("database.db");
+	bRtn = CHSQLite->Open(strDbPath);
 	if (!bRtn)
 	{
 		LOG_ERR(_T("打开数据库失败"));
-		//TIP_ERR(_T("打开数据库失败"));
 		return FALSE;
 	}
 
@@ -234,8 +232,7 @@ BOOL	CDlgMain::InitSys()			// 初始化所有资源
 	bRtn = CHModbus->Init(CHParam->m_nPort, CHParam->m_nBaud, CHParam->m_nParity, CHParam->m_nDataBits, CHParam->m_nStopBits);				// 串口初始化
 	if (!bRtn)
 	{
-		LOG_ERR(_T("串口初始化失败"));
-		//TIP_ERR(_T("串口初始化失败"));
+		LOG_ERR(_T("串口初始化失败"));		
 		return FALSE;
 	}
 	CHModbus->m_bInit = TRUE;
@@ -248,7 +245,7 @@ BOOL CDlgMain::CloseSys()
 {
 	BOOL bRtn = FALSE;
 
-	CHAdo->Close();
+	CHSQLite->Close();
 	//////////////////////////////////////////////////////////////////////////
 
 	////////////////////////////////////////////////////////////////////////////
@@ -318,20 +315,18 @@ void CDlgMain::OnSize(UINT nType, int cx, int cy)
 {
 	CDialogEx::OnSize(nType, cx, cy);
 
-	// TODO:  在此处添加消息处理程序代码
-	//CRect rectClient;
-	//GetClientRect(rectClient);
-	//if (m_wndTab.GetSafeHwnd() == NULL)
-	//{
-	//	return;
-	//}
-
-	//m_wndTab.SetWindowPos(this, -1, -1, rectClient.Width(), rectClient.Height(), SWP_NOMOVE | SWP_NOZORDER);
+	
 }
 
 
 BOOL	CDlgMain::CreateChildWnd()
 {
+
+	m_wndTab.InsertItem(0, _T("主界面"));
+	m_wndTab.InsertItem(1, _T("数据查看"));	
+	m_wndTab.InsertItem(2, _T("参数设置"));	
+	m_wndTab.SetItemSize(CSize(50, 35));
+
 	CRect rect;
 
 	m_wndTab.GetWindowRect(rect);
@@ -343,8 +338,11 @@ BOOL	CDlgMain::CreateChildWnd()
 
 	m_wndView.Create(CDlgView::IDD, &m_wndTab);
 	m_wndView.MoveWindow(rect);
-	m_wndDatabase.Create(IDD_DLGDATABASE, &m_wndTab);
+	m_wndDatabase.Create(CDlgDatabase::IDD, &m_wndTab);
 	m_wndDatabase.MoveWindow(rect);
+	m_wndParam.Create(CDlgParam::IDD, &m_wndTab);
+	m_wndParam.MoveWindow(rect);
+
 	return TRUE;
 }
 
@@ -358,14 +356,20 @@ LRESULT CDlgMain::OnSwitchWnd(WPARAM wParam, LPARAM lParam)
 		m_wndView.ShowWindow(SW_SHOW);
 		m_wndView.RedrawWindow();
 		m_wndDatabase.ShowWindow(SW_HIDE);
+		m_wndParam.ShowWindow(SW_HIDE);
 		break;
 
 	case WND_DATABASE:
 		m_wndView.ShowWindow(SW_HIDE);
-		m_wndView.RedrawWindow();
+		m_wndParam.ShowWindow(SW_HIDE);
 		m_wndDatabase.ShowWindow(SW_SHOW);		
-		m_wndDatabase.UpdateList();
+	
 		break;	
+	case WND_PARAM:
+		m_wndView.ShowWindow(SW_HIDE);
+		m_wndDatabase.ShowWindow(SW_HIDE);
+		m_wndParam.ShowWindow(SW_SHOW);
+		break;
 	default:
 		break;
 	}
