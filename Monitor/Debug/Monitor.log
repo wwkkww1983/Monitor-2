@@ -1,19 +1,18 @@
-﻿生成启动时间为 2020/6/19 9:57:08。
-     1>项目“D:\MyProjects\Monitor-master\Monitor\Monitor\Monitor.vcxproj”在节点 2 上(build 个目标)。
+﻿生成启动时间为 2020/6/20 19:53:45。
+     1>项目“E:\MyProjects\Monitor\Monitor\Monitor.vcxproj”在节点 2 上(build 个目标)。
        项目文件包含 ToolsVersion="12.0" 设置，而此版本的 MSBuild 不支持该工具版本。该项目将视为包含 ToolsVersion="4.0" 设置。
      1>InitializeBuildStatus:
          正在创建“Debug\Monitor.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          所有输出均为最新。
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I./thread /I"D:\MyProjects\Monitor-master\Monitor\Monitor\ADO" /I"D:\MyProjects\Monitor-master\Monitor\Monitor\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Monitor.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt PageParam1.cpp
-         PageParam1.cpp
-     1>d:\myprojects\monitor-master\monitor\monitor\pageparam1.cpp(124): warning C4018: “<”: 有符号/无符号不匹配
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I./thread /IE:\MyProjects\Monitor\Monitor\ADO /IE:\MyProjects\Monitor\Monitor\ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Monitor.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt DlgView.cpp
+         DlgView.cpp
        ResourceCompile:
          所有输出均为最新。
        ManifestResourceCompile:
          所有输出均为最新。
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyProjects\Monitor-master\Monitor\Debug\Monitor.exe" /INCREMENTAL /NOLOGO sqlite3.lib /MANIFEST /ManifestFile:"Debug\Monitor.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\MyProjects\Monitor-master\Monitor\Debug\Monitor.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyProjects\Monitor-master\Monitor\Debug\Monitor.lib" /MACHINE:X86 Debug\Monitor.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\MyProjects\Monitor\Debug\Monitor.exe" /INCREMENTAL /NOLOGO sqlite3.lib /MANIFEST /ManifestFile:"Debug\Monitor.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\MyProjects\Monitor\Debug\Monitor.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\MyProjects\Monitor\Debug\Monitor.lib" /MACHINE:X86 Debug\Monitor.res
          Debug\Monitor.exe.embed.manifest.res
          Debug\DlgParam.obj
          Debug\DlgView.obj
@@ -29,6 +28,7 @@
          Debug\CppSQLite3U.obj
          Debug\SQLiteHelp.obj
          Debug\stdafx.obj
+         Debug\ThermoMeter.obj
          Debug\WorkFunc.obj
          Debug\WorkPool.obj
          Debug\WRPF.obj
@@ -37,12 +37,12 @@
          所有输出均为最新。
        LinkEmbedManifest:
          所有输出均为最新。
-         Monitor.vcxproj -> D:\MyProjects\Monitor-master\Monitor\Debug\Monitor.exe
+         Monitor.vcxproj -> E:\MyProjects\Monitor\Debug\Monitor.exe
        FinalizeBuildStatus:
          正在删除文件“Debug\Monitor.unsuccessfulbuild”。
          正在对“Debug\Monitor.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“D:\MyProjects\Monitor-master\Monitor\Monitor\Monitor.vcxproj”(build 个目标)的操作。
+     1>已完成生成项目“E:\MyProjects\Monitor\Monitor\Monitor.vcxproj”(build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:04.47
+已用时间 00:00:00.84

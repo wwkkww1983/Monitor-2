@@ -117,6 +117,9 @@
     <ClInclude Include="SheetParam.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ThermoMeter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Monitor.cpp">
@@ -168,6 +171,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SheetParam.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ThermoMeter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
