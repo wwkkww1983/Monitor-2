@@ -28,15 +28,6 @@
     <None Include="res\Monitor.ico">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="res\tree_icons.bmp">
-      <Filter>资源文件</Filter>
-    </None>
-    <None Include="res\icons_large.bmp">
-      <Filter>资源文件</Filter>
-    </None>
-    <None Include="res\icons_small.bmp">
-      <Filter>资源文件</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Monitor.h">
@@ -117,7 +108,7 @@
     <ClInclude Include="SheetParam.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ThermoMeter.h">
+    <ClInclude Include="Meter.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -173,7 +164,7 @@
     <ClCompile Include="SheetParam.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ThermoMeter.cpp">
+    <ClCompile Include="Meter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

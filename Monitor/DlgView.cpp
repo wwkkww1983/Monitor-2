@@ -32,8 +32,9 @@ void CDlgView::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CDlgView, CDialogEx)
 	ON_WM_PAINT()
 	ON_MESSAGE(WM_USER_UPDATE_VIEW, &CDlgView::OnUserUpdateView)
+	ON_MESSAGE(WM_USER_UPDATE_ALARM, &CDlgView::OnUserUpdateAlarm)
 	ON_WM_ERASEBKGND()
-	ON_WM_TIMER()
+	ON_WM_TIMER()	
 END_MESSAGE_MAP()
 
 
@@ -43,12 +44,8 @@ BOOL CDlgView::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// TODO:  在此添加额外的初始化
-	CRect rect;
-	GetClientRect(rect);
-	m_ThermoMeter.Create(_T(""),WS_VISIBLE|WS_CHILD,rect,this);
-	m_ThermoMeter.MoveWindow(rect);
 
-	SetTimer(10, 700,NULL);
+
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 异常:  OCX 属性页应返回 FALSE
 }
@@ -69,16 +66,11 @@ void CDlgView::OnPaint()
 	MemBmp.CreateCompatibleBitmap(&dc, rect.Width(), rect.Height());
 
 	CBitmap* pOldBmp = MemDC.SelectObject(&MemBmp);
-//	灰色背景填充
+	//灰色背景填充
 	MemDC.FillSolidRect(rect, RGB(128, 128, 128));
-	// 双缓冲画图
-	//画坐标轴
-	m_ThermoMeter.DrawAxis(&MemDC);
-	//画温度计
-	m_ThermoMeter.DrawHermometer(&MemDC);
-	//画报警信号灯
-	m_ThermoMeter.DrawAlarmT(&MemDC);
-	m_ThermoMeter.DrawAlarmH(&MemDC);
+	//双缓冲画图
+	m_Meter.Draw(&MemDC);
+
 	dc.BitBlt(0, 0, rect.Width(), rect.Height(), &MemDC, 0, 0, SRCCOPY);
 
 	// 释放
@@ -105,14 +97,18 @@ BOOL CDlgView::OnEraseBkgnd(CDC* pDC)
 //	return CDialogEx::OnEraseBkgnd(pDC);
 }
 
-
-
-
-
-
-void CDlgView::OnTimer(UINT_PTR nIDEvent)
+afx_msg LRESULT CDlgView::OnUserUpdateAlarm(WPARAM wParam, LPARAM lParam)
 {
-	// TODO:  在此添加消息处理程序代码和/或调用默认值
-	m_ThermoMeter.OnTimer(nIDEvent);
-	CDialogEx::OnTimer(nIDEvent);
+	CRect rect;
+	BOOL bStateMeter = CWorkFunc::m_fCurTemperature > 100 ? TRUE : FALSE;
+	m_Meter.SetAlarmStateThermoMeter(bStateMeter);
+	m_Meter.GetRectAlarmThermoMeter(rect);
+	InvalidateRect(rect);
+
+	BOOL bStateHygrometer = CWorkFunc::m_fCurHumidity > 100 ? TRUE : FALSE;
+	m_Meter.SetAlarmStateHygrometer(bStateHygrometer);
+	m_Meter.GetRectAlarmHygrometer(rect);
+	InvalidateRect(rect);
+
+	return 0;
 }

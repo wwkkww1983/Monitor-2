@@ -11,6 +11,7 @@
 #include "resource.h"		// Ö÷·ûºÅ
 
 #define		WM_USER_UPDATE_VIEW			WM_USER + 103
+#define		WM_USER_UPDATE_ALARM		WM_USER + 104
 
 struct XSleepStruct
 {

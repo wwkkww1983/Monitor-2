@@ -1,5 +1,6 @@
 #pragma once
-#include "ThermoMeter.h"
+#include "Meter.h"
+
 
 // CDlgView 对话框
 
@@ -14,7 +15,7 @@ public:
 // 对话框数据
 	enum { IDD = IDD_DLGVIEW };
 //温度计图表
-	CThermoMeter	m_ThermoMeter;
+	CMeter	m_Meter;
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
 
@@ -25,9 +26,10 @@ public:
 
 protected:
 	afx_msg LRESULT OnUserUpdateView(WPARAM wParam, LPARAM lParam);
+	afx_msg LRESULT OnUserUpdateAlarm(WPARAM wParam, LPARAM lParam);
 public:
 	virtual BOOL OnInitDialog();
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
-	afx_msg void OnTimer(UINT_PTR nIDEvent);
+
 	
 };

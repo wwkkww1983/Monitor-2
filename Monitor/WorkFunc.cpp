@@ -138,6 +138,7 @@ BOOL CWorkFunc::ReadData()
 		DWORD endTick = GetTickCount();
 	
 		nTick += (endTick - startTick);
+		//横轴刻度值间隔设定为3秒
 		if (nTick > 3000)
 		{
 			LOG_ERR(_T("通讯超时，请检查串口连接"));
@@ -146,6 +147,9 @@ BOOL CWorkFunc::ReadData()
 	} while (TRUE);
 
 	LOG2(_T("读取到温度值为：%.1f，湿度值为：%.1f"), m_fCurTemperature, m_fCurHumidity);
+	// 发送给DlgView界面更新温湿度图
+	HWND hWnd = ((CDlgMain*)(theApp.m_pMainWnd))->m_wndView.m_hWnd;
+	::PostMessage(hWnd, WM_USER_UPDATE_ALARM, 0, 0);
 
 	CString strTemperature, strHumidity;
 	CString strTime = CTime::GetCurrentTime().Format(_T("%y-%m-%d %H:%M:%S"));
